@@ -1,42 +1,42 @@
 from enum import Enum
-class Type(Enum):
+class ResourceType(Enum):
     Metal = 1
     Crystal = 2
     Deuter = 3
 
 class Resource:
 
-    def __init__(self, resource_type):
-        self.resourcetype = resource_type
+    def __init__(self, resourceType):
+        self.resourceType = resourceType
         self.quantity = int(0)
 
-    def get_type(self):
-        return self.resourcetype
+    def getType(self):
+        return self.resourceType
 
-    def get_quantity(self):
+    def getQuantity(self):
         return self.quantity
 
-    def set_quantity(self,value):
+    def setQuantity(self,value):
         self.quantity = value
 
-    def add(self,Other_resource):
-        self.quantity = self.quantity + Other_resource.get_quantity()
+    def add(self,otherResource):
+        self.quantity = self.quantity + otherResource.getQuantity()
 
-    def substract(self,Other_resource):
-        self.quantity = self.quantity - Other_resource.get_quantity()
-
-
+    def substract(self,otherResource):
+        self.quantity = self.quantity - otherResource.getQuantity()
 
 
-metal = Resource(Type.Metal)
-crystal = Resource(Type.Crystal)
-metal.set_quantity(8)
-crystal.set_quantity(200)
-name = metal.get_quantity()
+
+
+metal = Resource(ResourceType.Metal)
+crystal = Resource(ResourceType.Crystal)
+metal.setQuantity(8)
+crystal.setQuantity(200)
+name = metal.getQuantity()
 print (name)
 metal.add(crystal)
-name = metal.get_quantity()
+name = metal.getQuantity()
 print(name)
 metal.substract(crystal)
-name = metal.get_quantity()
+name = metal.getQuantity()
 print (name)
