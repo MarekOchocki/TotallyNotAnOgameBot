@@ -12,13 +12,13 @@ class Resources:
         self.deuter = Resource(ResourceType.Deuter)
         self.deuter.setQuantity(deuterValue)
 
-    def getMetalValue(self):
+    def getMetalQuantity(self):
         return self.metal.getQuantity()
 
-    def getCrystalValue(self):
+    def getCrystalQuantity(self):
         return self.crystal.getQuantity()
 
-    def getDeuterValue(self):
+    def getDeuterQuantity(self):
         return self.deuter.getQuantity()
 
     def setResources(self, metalValue, crystalValue, deuterValue):
@@ -26,28 +26,28 @@ class Resources:
         self.crystal.setQuantity(crystalValue)
         self.deuter.setQuantity(deuterValue)
 
-    def add(self, otherResourcesObject):
-        self.metal.add(otherResourcesObject.metal)
-        self.crystal.add(otherResourcesObject.crystal)
-        self.deuter.add(otherResourcesObject.deuter)
+    def add(self, otherResources):
+        self.metal.add(otherResources.metal)
+        self.crystal.add(otherResources.crystal)
+        self.deuter.add(otherResources.deuter)
 
-    def substract(self, otherResourcesObject):
-        self.metal.substract(otherResourcesObject.metal)
-        self.crystal.substract(otherResourcesObject.crystal)
-        self.deuter.substract(otherResourcesObject.deuter)
+    def substract(self, otherResources):
+        self.metal.substract(otherResources.metal)
+        self.crystal.substract(otherResources.crystal)
+        self.deuter.substract(otherResources.deuter)
 
-    def addResource(self, ResourceObject):
-        if ResourceObject.resourceType == ResourceType.Metal:
-            self.metal.add(ResourceObject)
-        elif ResourceObject.resourceType == ResourceType.Crystal:
-            self.crystal.add(ResourceObject)
-        elif ResourceObject.resourceType == ResourceType.Deuter:
-            self.deuter.add(ResourceObject)
+    def addResource(self, resource):
+        if resource.resourceType == ResourceType.Metal:
+            self.metal.add(resource)
+        elif resource.resourceType == ResourceType.Crystal:
+            self.crystal.add(resource)
+        elif resource.resourceType == ResourceType.Deuter:
+            self.deuter.add(resource)
 
-    def substractResource(self, ResourceObject):
-        if ResourceObject.resourceType == ResourceType.Metal:
-            self.metal.substract(ResourceObject)
-        elif ResourceObject.resourceType == ResourceType.Crystal:
-            self.crystal.substract(ResourceObject)
-        elif ResourceObject.resourceType == ResourceType.Deuter:
-            self.deuter.substract(ResourceObject)
+    def substractResource(self, resource):
+        if resource.resourceType == ResourceType.Metal:
+            self.metal.substract(resource)
+        elif resource.resourceType == ResourceType.Crystal:
+            self.crystal.substract(resource)
+        elif resource.resourceType == ResourceType.Deuter:
+            self.deuter.substract(resource)
