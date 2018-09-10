@@ -27,14 +27,14 @@ class Resources:
         self.deuter.setQuantity(deuterValue)
 
     def add(self, otherResourcesObject):
-        self.metal.add(otherResourcesObject.getMetalValue())
-        self.crystal.add(otherResourcesObject.getCrystalValue())
-        self.deuter.add(otherResourcesObject.getDeuterValue())
+        self.metal.add(otherResourcesObject.metal)
+        self.crystal.add(otherResourcesObject.crystal)
+        self.deuter.add(otherResourcesObject.deuter)
 
     def substract(self, otherResourcesObject):
-        self.metal.substract(otherResourcesObject.getMetalValue())
-        self.crystal.substract(otherResourcesObject.getCrystalValue())
-        self.deuter.substract(otherResourcesObject.getDeuterValue())
+        self.metal.substract(otherResourcesObject.metal)
+        self.crystal.substract(otherResourcesObject.crystal)
+        self.deuter.substract(otherResourcesObject.deuter)
 
     def addResource(self, ResourceObject):
         if ResourceObject.resourceType == ResourceType.Metal:
