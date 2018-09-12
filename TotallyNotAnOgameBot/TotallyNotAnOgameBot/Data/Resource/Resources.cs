@@ -8,14 +8,16 @@ namespace TotallyNotAnOgameBot.Data.Resource
 {
     class Resources
     {
-        private Resource metal = new Resource(Resource.Type.Metal);
-        private Resource crystal = new Resource(Resource.Type.Crystal);
-        private Resource deuter = new Resource(Resource.Type.Deuter);
-
+        private Resource metal;
+        private Resource crystal;
+        private Resource deuter;
         public Resources(long metalValue = 0, long crystalValue = 0, long deuterValue = 0)
         {
+            metal = new Resource(Resource.Type.Metal);
             metal.setQuantity(metalValue);
+            crystal = new Resource(Resource.Type.Crystal);
             crystal.setQuantity(crystalValue);
+            deuter = new Resource(Resource.Type.Deuter);
             deuter.setQuantity(deuterValue);
         }
 
@@ -23,14 +25,17 @@ namespace TotallyNotAnOgameBot.Data.Resource
         {
             return metal.getQuantity();
         }
+
         public long getCrystalQuantity()
         {
             return crystal.getQuantity();
         }
+
         public long getDeuterQuantity()
         {
             return deuter.getQuantity();
         }
+
         public void setResources(long metalValue,long crystalValue,long deuterValue)
         {
             metal.setQuantity(metalValue);

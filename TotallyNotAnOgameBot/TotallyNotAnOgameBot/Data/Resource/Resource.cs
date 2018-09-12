@@ -9,7 +9,7 @@ namespace TotallyNotAnOgameBot.Data.Resource
     class Resource
     {
         public enum Type { Metal, Crystal, Deuter };
-        private long quantity = 0;
+        private long quantity;
         private Type type;
 
         public Resource(Type resourceType, long resourceQuantity = 0)
@@ -43,5 +43,4 @@ namespace TotallyNotAnOgameBot.Data.Resource
             quantity -= otherResource.getQuantity();
         }
     }
-
 }
