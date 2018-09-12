@@ -1,0 +1,249 @@
+From 97964e9873480bc856f87c28d74a0372166e9980 Mon Sep 17 00:00:00 2001
+From: "DESKTOP-EB1TGVK\\kozumi" <maniek123-45@o2.pl>
+Date: Wed, 12 Sep 2018 02:07:23 +0200
+Subject: [PATCH] Changing language from Python to C#
+
+---
+ README.md             |  0
+ Resource/Resource.cs  | 47 ++++++++++++++++++++++++++++++++
+ Resource/Resources.cs | 75 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ Resource_Class.py     | 26 ------------------
+ Resources_class.py    | 53 ------------------------------------
+ 5 files changed, 122 insertions(+), 79 deletions(-)
+ delete mode 100644 README.md
+ create mode 100644 Resource/Resource.cs
+ create mode 100644 Resource/Resources.cs
+ delete mode 100644 Resource_Class.py
+ delete mode 100644 Resources_class.py
+
+diff --git a/README.md b/README.md
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/Resource/Resource.cs b/Resource/Resource.cs
+new file mode 100644
+index 0000000..7bbd35b
+--- /dev/null
++++ b/Resource/Resource.cs
+@@ -0,0 +1,47 @@
++﻿using System;
++using System.Collections.Generic;
++using System.Linq;
++using System.Text;
++using System.Threading.Tasks;
++
++namespace TotallyNotAnOgameBot.Data.Resource
++{
++    class Resource
++    {
++        public enum Type { Metal, Crystal, Deuter };
++        private long quantity = 0;
++        private Type type;
++
++        public Resource(Type resourceType, long resourceQuantity = 0)
++        {
++            type = resourceType;
++            quantity = resourceQuantity;
++        }
++
++        public Type getType()
++        {
++            return type;
++        }
++
++        public long getQuantity()
++        {
++            return quantity;
++        }
++
++        public void setQuantity(long value)
++        {
++            quantity = value;
++        }
++
++        public void addQuantity(Resource otherResource)
++        {
++            quantity += otherResource.getQuantity();
++        }
++
++        public void substract(Resource otherResource)
++        {
++            quantity -= otherResource.getQuantity();
++        }
++    }
++
++}
+diff --git a/Resource/Resources.cs b/Resource/Resources.cs
+new file mode 100644
+index 0000000..55c71d6
+--- /dev/null
++++ b/Resource/Resources.cs
+@@ -0,0 +1,75 @@
++﻿using System;
++using System.Collections.Generic;
++using System.Linq;
++using System.Text;
++using System.Threading.Tasks;
++
++namespace TotallyNotAnOgameBot.Data.Resource
++{
++    class Resources
++    {
++        private Resource metal = new Resource(Resource.Type.Metal);
++        private Resource crystal = new Resource(Resource.Type.Crystal);
++        private Resource deuter = new Resource(Resource.Type.Deuter);
++
++        public Resources(long metalValue = 0, long crystalValue = 0, long deuterValue = 0)
++        {
++            metal.setQuantity(metalValue);
++            crystal.setQuantity(crystalValue);
++            deuter.setQuantity(deuterValue);
++        }
++
++        public long getMetalQuantity()
++        {
++            return metal.getQuantity();
++        }
++        public long getCrystalQuantity()
++        {
++            return crystal.getQuantity();
++        }
++        public long getDeuterQuantity()
++        {
++            return deuter.getQuantity();
++        }
++        public void setResources(long metalValue,long crystalValue,long deuterValue)
++        {
++            metal.setQuantity(metalValue);
++            crystal.setQuantity(crystalValue);
++            deuter.setQuantity(deuterValue);
++        }
++
++        public void add(Resources otherResources)
++        {
++            metal.addQuantity(otherResources.metal);
++            crystal.addQuantity(otherResources.crystal);
++            deuter.addQuantity(otherResources.deuter);
++        }
++
++        public void substract(Resources otherResources)
++        {
++            metal.substract(otherResources.metal);
++            crystal.substract(otherResources.crystal);
++            deuter.substract(otherResources.deuter);
++        }
++
++        public void addResource(Resource resource)
++        {
++            if (resource.getType() == Resource.Type.Metal)
++                metal.addQuantity(resource);
++            else if (resource.getType() == Resource.Type.Crystal)
++                crystal.addQuantity(resource);
++            else if (resource.getType() == Resource.Type.Deuter)
++                deuter.addQuantity(resource);
++        }
++
++        public void substractResource(Resource resource)
++        {
++            if (resource.getType() == Resource.Type.Metal)
++                metal.substract(resource);
++            else if (resource.getType() == Resource.Type.Crystal)
++                crystal.substract(resource);
++            else if (resource.getType() == Resource.Type.Deuter)
++                deuter.substract(resource);
++        }
++    }
++}
+diff --git a/Resource_Class.py b/Resource_Class.py
+deleted file mode 100644
+index 811364e..0000000
+--- a/Resource_Class.py
++++ /dev/null
+@@ -1,26 +0,0 @@
+-from enum import Enum
+-
+-class ResourceType(Enum):
+-    Metal = 1
+-    Crystal = 2
+-    Deuter = 3
+-
+-class Resource:
+-    def __init__(self, resourceType):
+-        self.resourceType = resourceType
+-        self.quantity = 0
+-
+-    def getType(self):
+-        return self.resourceType
+-
+-    def getQuantity(self):
+-        return self.quantity
+-
+-    def setQuantity(self, value):
+-        self.quantity = value
+-
+-    def add(self, otherResource):
+-        self.quantity += otherResource.getQuantity()
+-
+-    def substract(self, otherResource):
+-        self.quantity -= otherResource.getQuantity()
+diff --git a/Resources_class.py b/Resources_class.py
+deleted file mode 100644
+index 5682e44..0000000
+--- a/Resources_class.py
++++ /dev/null
+@@ -1,53 +0,0 @@
+-from Resource_Class import Resource
+-from Resource_Class import ResourceType
+-
+-class Resources:
+-    def __init__(self, metalValue = 0, crystalValue = 0, deuterValue = 0):
+-        self.metal = Resource(ResourceType.Metal)
+-        self.metal.setQuantity(metalValue)
+-
+-        self.crystal = Resource(ResourceType.Crystal)
+-        self.crystal.setQuantity(crystalValue)
+-
+-        self.deuter = Resource(ResourceType.Deuter)
+-        self.deuter.setQuantity(deuterValue)
+-
+-    def getMetalQuantity(self):
+-        return self.metal.getQuantity()
+-
+-    def getCrystalQuantity(self):
+-        return self.crystal.getQuantity()
+-
+-    def getDeuterQuantity(self):
+-        return self.deuter.getQuantity()
+-
+-    def setResources(self, metalValue, crystalValue, deuterValue):
+-        self.metal.setQuantity(metalValue)
+-        self.crystal.setQuantity(crystalValue)
+-        self.deuter.setQuantity(deuterValue)
+-
+-    def add(self, otherResources):
+-        self.metal.add(otherResources.metal)
+-        self.crystal.add(otherResources.crystal)
+-        self.deuter.add(otherResources.deuter)
+-
+-    def substract(self, otherResources):
+-        self.metal.substract(otherResources.metal)
+-        self.crystal.substract(otherResources.crystal)
+-        self.deuter.substract(otherResources.deuter)
+-
+-    def addResource(self, resource):
+-        if resource.resourceType == ResourceType.Metal:
+-            self.metal.add(resource)
+-        elif resource.resourceType == ResourceType.Crystal:
+-            self.crystal.add(resource)
+-        elif resource.resourceType == ResourceType.Deuter:
+-            self.deuter.add(resource)
+-
+-    def substractResource(self, resource):
+-        if resource.resourceType == ResourceType.Metal:
+-            self.metal.substract(resource)
+-        elif resource.resourceType == ResourceType.Crystal:
+-            self.crystal.substract(resource)
+-        elif resource.resourceType == ResourceType.Deuter:
+-            self.deuter.substract(resource)
+-- 
+2.16.2.windows.1
+
