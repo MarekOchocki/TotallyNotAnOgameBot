@@ -11,13 +11,14 @@ namespace TotallyNotAnOgameBot.Data.Resource
         private Resource metal;
         private Resource crystal;
         private Resource deuter;
+
         public Resources(long metalValue = 0, long crystalValue = 0, long deuterValue = 0)
         {
             metal = new Resource(Resource.Type.Metal);
-            metal.setQuantity(metalValue);
             crystal = new Resource(Resource.Type.Crystal);
-            crystal.setQuantity(crystalValue);
             deuter = new Resource(Resource.Type.Deuter);
+            metal.setQuantity(metalValue);
+            crystal.setQuantity(crystalValue);
             deuter.setQuantity(deuterValue);
         }
 

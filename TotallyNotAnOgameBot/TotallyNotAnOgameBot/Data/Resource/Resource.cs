@@ -9,6 +9,7 @@ namespace TotallyNotAnOgameBot.Data.Resource
     class Resource
     {
         public enum Type { Metal, Crystal, Deuter };
+
         private long quantity;
         private Type type;
 
