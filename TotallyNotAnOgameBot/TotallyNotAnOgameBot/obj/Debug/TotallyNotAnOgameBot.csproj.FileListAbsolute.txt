@@ -1,7 +1,0 @@
-E:\cb\DefinetlyNotOgameBot-C#\DefinietlyNotOgameBot\TotallyNotAnOgameBot\TotallyNotAnOgameBot\bin\Debug\TotallyNotAnOgameBot.exe.config
-E:\cb\DefinetlyNotOgameBot-C#\DefinietlyNotOgameBot\TotallyNotAnOgameBot\TotallyNotAnOgameBot\bin\Debug\TotallyNotAnOgameBot.exe
-E:\cb\DefinetlyNotOgameBot-C#\DefinietlyNotOgameBot\TotallyNotAnOgameBot\TotallyNotAnOgameBot\bin\Debug\TotallyNotAnOgameBot.pdb
-E:\cb\DefinetlyNotOgameBot-C#\DefinietlyNotOgameBot\TotallyNotAnOgameBot\TotallyNotAnOgameBot\obj\Debug\TotallyNotAnOgameBot.csproj.CoreCompileInputs.cache
-E:\cb\DefinetlyNotOgameBot-C#\DefinietlyNotOgameBot\TotallyNotAnOgameBot\TotallyNotAnOgameBot\obj\Debug\TotallyNotAnOgameBot.exe
-E:\cb\DefinetlyNotOgameBot-C#\DefinietlyNotOgameBot\TotallyNotAnOgameBot\TotallyNotAnOgameBot\obj\Debug\TotallyNotAnOgameBot.pdb
-E:\cb\DefinetlyNotOgameBot-C#\DefinietlyNotOgameBot\TotallyNotAnOgameBot\TotallyNotAnOgameBot\obj\Debug\TotallyNotAnOgameBot.csprojAssemblyReference.cache
