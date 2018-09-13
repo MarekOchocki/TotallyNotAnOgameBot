@@ -1,0 +1,4 @@
+*.diff
+*bin/
+*obj/
+*.vs
