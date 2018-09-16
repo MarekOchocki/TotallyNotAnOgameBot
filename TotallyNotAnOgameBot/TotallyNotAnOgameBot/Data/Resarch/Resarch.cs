@@ -8,8 +8,8 @@ namespace TotallyNotAnOgameBot.Data.Resarch
 {
     class Resarch
     {
-        public enum Type {EnergyTechnology, LaserTechnology, IonTechnology, HyperspaceTechnology ,PlasmaTechnology, 
-        EspionageTechnology ,ComputerTechnology ,Astrophysics ,IntergalacticResearchNetwork , GravitonTechnology, 
+        public enum Type {EnergyTechnology, LaserTechnology, IonTechnology, HyperspaceTechnology, PlasmaTechnology,
+        EspionageTechnology, ComputerTechnology, Astrophysics, IntergalacticResearchNetwork, GravitonTechnology,
         WeaponsTechnology, ShieldingTechnology, ArmourTechnology, CombustionDrive, ImpulseDrive, HyperspaceDrive}
 
         private int level;
