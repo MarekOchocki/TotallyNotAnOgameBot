@@ -11,7 +11,7 @@ namespace TotallyNotAnOgameBot.Data.Resource
         public enum Type { Metal, Crystal, Deuter };
 
         private long quantity;
-        private Type type;
+        private readonly Type type;
 
         public Resource(Type resourceType, long resourceQuantity = 0)
         {
