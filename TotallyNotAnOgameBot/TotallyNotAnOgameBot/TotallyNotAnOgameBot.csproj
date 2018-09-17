@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Buildings\Buildings.cs" />
+    <Compile Include="Data\Buildings\MoonBuildings.cs" />
+    <Compile Include="Data\Buildings\ProductionBuildings.cs" />
+    <Compile Include="Data\Buildings\StationBuildings.cs" />
     <Compile Include="Data\Fleet\Fleet.cs" />
     <Compile Include="Data\Fleet\Spaceships.cs" />
     <Compile Include="Data\Resarch\Resarch.cs" />
