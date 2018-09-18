@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TotallyNotAnOgameBot.Exceptions;
 
 namespace TotallyNotAnOgameBot.Data.Buildings
 {
-    class Buildings
+    class Building
     {
         public enum Type {MetalMine, CrystalMine, DeuteriumSynthesizer, SolarPlant, FusionReactor, SolarSatelite,
         MetalStorge, CrystalStorge, DeuteriumTank, RoboticsFactory, Shipyard, ResarchLab, AllianceDepot, MissileSilo,
@@ -15,10 +16,17 @@ namespace TotallyNotAnOgameBot.Data.Buildings
         private int level;
         private readonly Type type;
 
-        public Buildings(Type buildingType, int buildingLevel)
+        public Building(Type buildingType, int buildingLevel)
         {
             type = buildingType;
-            level = buildingLevel;
+            if (buildingLevel >= 0)
+            {
+                level = buildingLevel;
+            }
+            else
+            {
+                throw new LessThanZeroException();
+            }
         }
 
         public Type getType()
@@ -33,7 +41,13 @@ namespace TotallyNotAnOgameBot.Data.Buildings
 
         public void setLevel(int value)
         {
-            level = value;
+            if (value >= 0)
+            {
+                level = value;
+            }else
+            {
+                throw new LessThanZeroException();
+            }
         }
 
         public void addLevel(int value)
@@ -43,7 +57,13 @@ namespace TotallyNotAnOgameBot.Data.Buildings
 
         public void substractLevel(int value)
         {
-            level -= value;
+            if ((level - value) >= 0)
+            {
+                level -= value;
+            }else
+            {
+                throw new LessThanZeroException();
+            }
         }
     }
 }
