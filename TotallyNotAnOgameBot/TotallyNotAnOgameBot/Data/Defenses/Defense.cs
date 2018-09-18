@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TotallyNotAnOgameBot.Exceptions;
 
-namespace TotallyNotAnOgameBot.Data.Defences
+namespace TotallyNotAnOgameBot.Data.Defenses
 {
     class Defense
     {
@@ -17,7 +18,14 @@ namespace TotallyNotAnOgameBot.Data.Defences
         public Defense(Type defenseType, int defenseQuantity)
         {
             type = defenseType;
-            quantity = defenseQuantity;
+            if (defenseQuantity >= 0)
+            {
+                quantity = defenseQuantity;
+            }
+            else
+            {
+                throw new LessThanZeroException();
+            }
         }
 
         public Type getType()
@@ -32,7 +40,13 @@ namespace TotallyNotAnOgameBot.Data.Defences
 
         public void setQuantity(int value)
         {
-            quantity = value;
+            if (value >= 0)
+            {
+                quantity = value;
+            }else
+            {
+                throw new LessThanZeroException();
+            }
         }
 
         public void addQuantity(int value)
@@ -42,7 +56,13 @@ namespace TotallyNotAnOgameBot.Data.Defences
 
         public void substractQuantity(int value)
         {
-            quantity -= value;
+            if ((quantity - value) >= 0)
+            {
+                quantity -= value;
+            }else
+            {
+                throw new LessThanZeroException();
+            }
         }
     }
 }
