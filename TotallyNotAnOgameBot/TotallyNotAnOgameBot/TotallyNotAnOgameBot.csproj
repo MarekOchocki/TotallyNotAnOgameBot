@@ -43,16 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Buildings\Buildings.cs" />
+    <Compile Include="Data\Buildings\Building.cs" />
     <Compile Include="Data\Buildings\MoonBuildings.cs" />
     <Compile Include="Data\Buildings\ProductionBuildings.cs" />
     <Compile Include="Data\Buildings\StationBuildings.cs" />
+    <Compile Include="Data\Defenses\Defense.cs" />
+    <Compile Include="Data\Defenses\DefenseState.cs" />
     <Compile Include="Data\Fleet\Fleet.cs" />
     <Compile Include="Data\Fleet\Spaceships.cs" />
     <Compile Include="Data\Resarch\Resarch.cs" />
     <Compile Include="Data\Resarch\ResarchState.cs" />
     <Compile Include="Data\Resource\Resource.cs" />
     <Compile Include="Data\Resource\Resources.cs" />
+    <Compile Include="Exceptions\LessThanZeroException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
