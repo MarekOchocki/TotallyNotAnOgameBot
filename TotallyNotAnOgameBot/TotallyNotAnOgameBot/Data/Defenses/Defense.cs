@@ -18,14 +18,11 @@ namespace TotallyNotAnOgameBot.Data.Defenses
         public Defense(Type defenseType, int defenseQuantity)
         {
             type = defenseType;
-            if (defenseQuantity >= 0)
-            {
-                quantity = defenseQuantity;
-            }
-            else
+            if (defenseQuantity < 0)
             {
                 throw new LessThanZeroException();
             }
+            quantity = defenseQuantity;
         }
 
         public Type getType()
@@ -40,13 +37,11 @@ namespace TotallyNotAnOgameBot.Data.Defenses
 
         public void setQuantity(int value)
         {
-            if (value >= 0)
-            {
-                quantity = value;
-            }else
+            if (value < 0)
             {
                 throw new LessThanZeroException();
             }
+            quantity = value;
         }
 
         public void addQuantity(int value)
@@ -56,13 +51,11 @@ namespace TotallyNotAnOgameBot.Data.Defenses
 
         public void substractQuantity(int value)
         {
-            if ((quantity - value) >= 0)
-            {
-                quantity -= value;
-            }else
+            if ((quantity - value) < 0)
             {
                 throw new LessThanZeroException();
             }
+            quantity -= value;
         }
     }
 }
