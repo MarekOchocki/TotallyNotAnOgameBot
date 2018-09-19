@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TotallyNotAnOgameBot.Exceptions;
 
 namespace TotallyNotAnOgameBot.Data.Fleet
 {
@@ -17,7 +18,12 @@ namespace TotallyNotAnOgameBot.Data.Fleet
         public Spaceships(Type spaceshipType, long spaceshipQuantity)
         {
             type = spaceshipType;
-            quantity = spaceshipQuantity;
+            if (spaceshipQuantity < 0)
+            {
+                throw new LessThanZeroException();
+            }
+                quantity = spaceshipQuantity;
+
         }
 
         public Type getType()
@@ -32,6 +38,10 @@ namespace TotallyNotAnOgameBot.Data.Fleet
 
         public void setQuantity(long value)
         {
+            if (value < 0)
+            {
+                throw new LessThanZeroException();
+            }
             quantity = value;
         }
 
@@ -42,6 +52,11 @@ namespace TotallyNotAnOgameBot.Data.Fleet
 
         public void substractQuantity(long value)
         {
+            if((quantity - value) < 0 )
+            {
+                throw new LessThanZeroException();
+                
+            }
             quantity -= value;
         }
     }

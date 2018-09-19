@@ -44,45 +44,5 @@ namespace TotallyNotAnOgameBot.Data.Resarch
             ImpulseDrive = new Resarch(Resarch.Type.ImpulseDrive, 0);
             HyperspaceDrive = new Resarch(Resarch.Type.HyperspaceDrive, 0);
         }
-
-        public void add(ResarchState otherResarch)
-        {
-            EnergyTechnology.addLevel(otherResarch.EnergyTechnology.getLevel());
-            LaserTechnology.addLevel(otherResarch.LaserTechnology.getLevel());
-            IonTechnology.addLevel(otherResarch.IonTechnology.getLevel());
-            HyperspaceTechnology.addLevel(otherResarch.HyperspaceTechnology.getLevel());
-            PlasmaTechnology.addLevel(otherResarch.PlasmaTechnology.getLevel());
-            EspionageTechnology.addLevel(otherResarch.EspionageTechnology.getLevel());
-            ComputerTechnology.addLevel(otherResarch.ComputerTechnology.getLevel());
-            Astrophysics.addLevel(otherResarch.Astrophysics.getLevel());
-            IntergalacticResearchNetwork.addLevel(otherResarch.IntergalacticResearchNetwork.getLevel());
-            GravitonTechnology.addLevel(otherResarch.GravitonTechnology.getLevel());
-            WeaponsTechnology.addLevel(otherResarch.WeaponsTechnology.getLevel());
-            ShieldingTechnology.addLevel(otherResarch.ShieldingTechnology.getLevel());
-            ArmourTechnology.addLevel(otherResarch.ArmourTechnology.getLevel());
-            CombustionDrive.addLevel(otherResarch.CombustionDrive.getLevel());
-            ImpulseDrive.addLevel(otherResarch.ImpulseDrive.getLevel());
-            HyperspaceDrive.addLevel(otherResarch.HyperspaceDrive.getLevel());
-        }
-
-        public void substract(ResarchState otherResarch)
-        {
-            EnergyTechnology.substractLevel(otherResarch.EnergyTechnology.getLevel());
-            LaserTechnology.substractLevel(otherResarch.LaserTechnology.getLevel());
-            IonTechnology.substractLevel(otherResarch.IonTechnology.getLevel());
-            HyperspaceTechnology.substractLevel(otherResarch.HyperspaceTechnology.getLevel());
-            PlasmaTechnology.substractLevel(otherResarch.PlasmaTechnology.getLevel());
-            EspionageTechnology.substractLevel(otherResarch.EspionageTechnology.getLevel());
-            ComputerTechnology.substractLevel(otherResarch.ComputerTechnology.getLevel());
-            Astrophysics.substractLevel(otherResarch.Astrophysics.getLevel());
-            IntergalacticResearchNetwork.substractLevel(otherResarch.IntergalacticResearchNetwork.getLevel());
-            GravitonTechnology.substractLevel(otherResarch.GravitonTechnology.getLevel());
-            WeaponsTechnology.substractLevel(otherResarch.WeaponsTechnology.getLevel());
-            ShieldingTechnology.substractLevel(otherResarch.ShieldingTechnology.getLevel());
-            ArmourTechnology.substractLevel(otherResarch.ArmourTechnology.getLevel());
-            CombustionDrive.substractLevel(otherResarch.CombustionDrive.getLevel());
-            ImpulseDrive.substractLevel(otherResarch.ImpulseDrive.getLevel());
-            HyperspaceDrive.substractLevel(otherResarch.HyperspaceDrive.getLevel());
-        }
     }
 }

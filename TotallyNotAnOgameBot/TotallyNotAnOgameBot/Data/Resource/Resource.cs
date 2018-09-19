@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TotallyNotAnOgameBot.Exceptions;
 
 namespace TotallyNotAnOgameBot.Data.Resource
 {
@@ -15,8 +16,19 @@ namespace TotallyNotAnOgameBot.Data.Resource
 
         public Resource(Type resourceType, long resourceQuantity = 0)
         {
-            type = resourceType;
-            quantity = resourceQuantity;
+            /*try
+            {*/
+                type = resourceType;
+            if (resourceQuantity < 0)
+            {
+                throw new LessThanZeroException();
+            }
+                quantity = resourceQuantity;
+           /* }
+            catch(LessThanZeroException a)
+            {
+                end of program + error raport
+            }*/
         }
 
         public Type getType()
@@ -31,7 +43,12 @@ namespace TotallyNotAnOgameBot.Data.Resource
 
         public void setQuantity(long value)
         {
-            quantity = value;
+            if (value < 0)
+            {
+                throw new LessThanZeroException();
+            }
+                quantity = value;
+
         }
 
         public void addQuantity(Resource otherResource)
@@ -39,9 +56,13 @@ namespace TotallyNotAnOgameBot.Data.Resource
             quantity += otherResource.getQuantity();
         }
 
-        public void substract(Resource otherResource)
+        public void substractQuantity(Resource otherResource)
         {
-            quantity -= otherResource.getQuantity();
+            if((quantity - otherResource.getQuantity() ) < 0)
+            {
+                throw new LessThanZeroException();
+            }
+                quantity -= otherResource.getQuantity();
         }
     }
 }

@@ -19,14 +19,11 @@ namespace TotallyNotAnOgameBot.Data.Buildings
         public Building(Type buildingType, int buildingLevel)
         {
             type = buildingType;
-            if (buildingLevel >= 0)
-            {
-                level = buildingLevel;
-            }
-            else
+            if (buildingLevel < 0)
             {
                 throw new LessThanZeroException();
             }
+            level = buildingLevel;
         }
 
         public Type getType()
@@ -41,13 +38,11 @@ namespace TotallyNotAnOgameBot.Data.Buildings
 
         public void setLevel(int value)
         {
-            if (value >= 0)
-            {
-                level = value;
-            }else
+            if (value < 0)
             {
                 throw new LessThanZeroException();
             }
+            level = value;
         }
 
         public void addLevel(int value)
@@ -57,13 +52,11 @@ namespace TotallyNotAnOgameBot.Data.Buildings
 
         public void substractLevel(int value)
         {
-            if ((level - value) >= 0)
-            {
-                level -= value;
-            }else
+            if ((level - value) < 0)
             {
                 throw new LessThanZeroException();
             }
+            level -= value;
         }
     }
 }

@@ -53,9 +53,9 @@ namespace TotallyNotAnOgameBot.Data.Resource
 
         public void substract(Resources otherResources)
         {
-            metal.substract(otherResources.metal);
-            crystal.substract(otherResources.crystal);
-            deuter.substract(otherResources.deuter);
+            metal.substractQuantity(otherResources.metal);
+            crystal.substractQuantity(otherResources.crystal);
+            deuter.substractQuantity(otherResources.deuter);
         }
 
         public void addResource(Resource resource)
@@ -71,11 +71,11 @@ namespace TotallyNotAnOgameBot.Data.Resource
         public void substractResource(Resource resource)
         {
             if (resource.getType() == Resource.Type.Metal)
-                metal.substract(resource);
+                metal.substractQuantity(resource);
             else if (resource.getType() == Resource.Type.Crystal)
-                crystal.substract(resource);
+                crystal.substractQuantity(resource);
             else if (resource.getType() == Resource.Type.Deuter)
-                deuter.substract(resource);
+                deuter.substractQuantity(resource);
         }
     }
 }

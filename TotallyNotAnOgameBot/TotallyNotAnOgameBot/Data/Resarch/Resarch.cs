@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TotallyNotAnOgameBot.Exceptions;
 
 namespace TotallyNotAnOgameBot.Data.Resarch
 {
@@ -18,6 +19,10 @@ namespace TotallyNotAnOgameBot.Data.Resarch
         public Resarch(Type resarchType, int resarchLevel = 0)
         {
             type = resarchType;
+            if (resarchLevel < 0)
+            {
+                throw new LessThanZeroException();
+            }
             level = resarchLevel;
         }
 
@@ -33,6 +38,10 @@ namespace TotallyNotAnOgameBot.Data.Resarch
 
         public void setLevel(int value)
         {
+            if (value < 0)
+            {
+                throw new LessThanZeroException();
+            }
             level = value;
         }
 
@@ -43,6 +52,10 @@ namespace TotallyNotAnOgameBot.Data.Resarch
 
         public void substractLevel(int value)
         {
+            if (level - value < 0)
+            {
+                throw new LessThanZeroException();
+            }
             level -= value;
         }
     }
