@@ -16,19 +16,12 @@ namespace TotallyNotAnOgameBot.Data.Resource
 
         public Resource(Type resourceType, long resourceQuantity = 0)
         {
-            /*try
-            {*/
-                type = resourceType;
+            type = resourceType;
             if (resourceQuantity < 0)
             {
                 throw new LessThanZeroException();
             }
-                quantity = resourceQuantity;
-           /* }
-            catch(LessThanZeroException a)
-            {
-                end of program + error raport
-            }*/
+            quantity = resourceQuantity;
         }
 
         public Type getType()
@@ -47,7 +40,7 @@ namespace TotallyNotAnOgameBot.Data.Resource
             {
                 throw new LessThanZeroException();
             }
-                quantity = value;
+            quantity = value;
 
         }
 
@@ -62,7 +55,7 @@ namespace TotallyNotAnOgameBot.Data.Resource
             {
                 throw new LessThanZeroException();
             }
-                quantity -= otherResource.getQuantity();
+            quantity -= otherResource.getQuantity();
         }
     }
 }

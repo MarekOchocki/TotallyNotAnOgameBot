@@ -22,7 +22,7 @@ namespace TotallyNotAnOgameBot.Data.Fleet
             {
                 throw new LessThanZeroException();
             }
-                quantity = spaceshipQuantity;
+            quantity = spaceshipQuantity;
 
         }
 
