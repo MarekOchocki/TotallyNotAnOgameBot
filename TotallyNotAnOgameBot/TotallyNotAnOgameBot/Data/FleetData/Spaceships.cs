@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TotallyNotAnOgameBot.Exceptions;
 
-namespace TotallyNotAnOgameBot.Data.Fleet
+namespace TotallyNotAnOgameBot.Data.FleetData
 {
     class Spaceships
     {

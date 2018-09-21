@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TotallyNotAnOgameBot.Data.Fleet
+namespace TotallyNotAnOgameBot.Data.FleetData
 {
     class Fleet
     {
