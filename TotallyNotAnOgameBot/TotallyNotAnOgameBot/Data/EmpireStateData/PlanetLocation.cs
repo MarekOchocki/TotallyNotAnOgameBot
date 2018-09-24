@@ -8,31 +8,23 @@ namespace TotallyNotAnOgameBot.Data.EmpireStateData
 {
     class PlanetLocation
     {
-        private readonly int planetNumber;
-        private readonly int galaxyNumber;
-        private readonly int systemNumber;
+        public readonly int planetNumber;
+        public readonly int galaxyNumber;
+        public readonly int systemNumber;
 
 
         public PlanetLocation(int planetNumber, int systemNumber, int galaxyNumber)
         {
+            if ((planetNumber < 0) || (planetNumber > 15))
+                throw new ArgumentOutOfRangeException("less than 0 or more than 15");
+            if ((systemNumber < 0) || (systemNumber > 499))
+                throw new ArgumentOutOfRangeException("less than 0 or more than 499");
+            if ((galaxyNumber < 0) || (galaxyNumber > 7))
+                throw new ArgumentOutOfRangeException("less than 0 or more than 8");
+
             this.planetNumber = planetNumber;
             this.galaxyNumber = galaxyNumber;
             this.systemNumber = systemNumber;
-        }
-
-        public int getPlanetNumber()
-        {
-            return planetNumber;
-        }
-
-        public int getGalaxyNumber()
-        {
-            return galaxyNumber;
-        }
-
-        public int getSystemNumber()
-        {
-            return systemNumber;
         }
     }
 }
