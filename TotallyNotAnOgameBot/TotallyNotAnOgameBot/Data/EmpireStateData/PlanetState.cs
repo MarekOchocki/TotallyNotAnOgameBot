@@ -19,6 +19,7 @@ namespace TotallyNotAnOgameBot.Data.EmpireStateData
         public MoonState moon;
         public ProductionBuildings production;
         public StationBuildings station;
+        public string name;
 
         public PlanetState()
         {
