@@ -51,6 +51,7 @@
     <Compile Include="Data\Defenses\DefenseState.cs" />
     <Compile Include="Data\EmpireStateData\EmpireState.cs" />
     <Compile Include="Data\EmpireStateData\MoonState.cs" />
+    <Compile Include="Data\EmpireStateData\PlanetLocation.cs" />
     <Compile Include="Data\EmpireStateData\PlanetState.cs" />
     <Compile Include="Data\FleetData\Fleet.cs" />
     <Compile Include="Data\FleetData\Spaceships.cs" />
