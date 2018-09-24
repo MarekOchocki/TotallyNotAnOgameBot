@@ -8,13 +8,13 @@ using TotallyNotAnOgameBot.Exceptions;
 
 namespace TotallyNotAnOgameBot.Data.EmpireStateData
 {
-    class EmpireState
+     class EmpireState
     {
         public ResarchState resarch;
         public int amountOfPlanets;
         public PlanetState[] planets;
 
-        public EmpireState(int planetQuantity)
+        public EmpireState(int planetQuantity = 1)
         {
             if(planetQuantity < 0)
             {

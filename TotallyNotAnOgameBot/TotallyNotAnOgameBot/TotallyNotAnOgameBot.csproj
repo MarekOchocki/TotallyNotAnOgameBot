@@ -58,6 +58,7 @@
     <Compile Include="Data\Resarch\ResarchState.cs" />
     <Compile Include="Data\Resource\Resource.cs" />
     <Compile Include="Data\Resource\Resources.cs" />
+    <Compile Include="Data\Snapshots\EmpireStateSnapshot.cs" />
     <Compile Include="Exceptions\EqualZeroException.cs" />
     <Compile Include="Exceptions\LessThanZeroException.cs" />
     <Compile Include="Program.cs" />
