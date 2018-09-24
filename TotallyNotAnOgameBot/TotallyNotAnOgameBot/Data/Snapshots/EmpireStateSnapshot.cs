@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 using TotallyNotAnOgameBot.Data.EmpireStateData;
 
 
- namespace EmpireStateSnapshot
+namespace TotallyNotAnOgameBot.Data.Snapshots
 {
- 	class EmpireStateSnapshot
- 	{
- 		public readonly EmpireState empireState;
- 		public readonly DateTime date;
- 		
- 		public EmpireStateSnapshot(EmpireState empireState, DateTime date)
- 		{
-            this.empireState = empireState;
-            this.date = date;
- 		}
- 	}
- }
+    class EmpireStateSnapshot
+    {
+		public readonly EmpireState empireState;
+		public readonly DateTime date;
+		
+		public EmpireStateSnapshot(EmpireState empireState, DateTime date)
+		{
+           this.empireState = empireState;
+           this.date = date;
+        }
+	}
+}
