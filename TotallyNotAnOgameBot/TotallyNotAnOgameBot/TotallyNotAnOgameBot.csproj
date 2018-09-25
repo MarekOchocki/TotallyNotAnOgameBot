@@ -60,6 +60,7 @@
     <Compile Include="Data\Resource\Resource.cs" />
     <Compile Include="Data\Resource\Resources.cs" />
     <Compile Include="Data\Snapshots\EmpireStateSnapshot.cs" />
+    <Compile Include="Data\TechnologyRequirements\TechRequirements.cs" />
     <Compile Include="Exceptions\EqualZeroException.cs" />
     <Compile Include="Exceptions\LessThanZeroException.cs" />
     <Compile Include="Program.cs" />
@@ -68,5 +69,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
