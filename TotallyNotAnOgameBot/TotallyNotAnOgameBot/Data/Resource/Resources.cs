@@ -11,15 +11,18 @@ namespace TotallyNotAnOgameBot.Data.Resource
         private Resource metal;
         private Resource crystal;
         private Resource deuter;
+        private Energy energy;
 
-        public Resources(long metalValue = 0, long crystalValue = 0, long deuterValue = 0)
+        public Resources(long metalValue = 0, long crystalValue = 0, long deuterValue = 0, long energyValue = 0 )
         {
             metal = new Resource(Resource.Type.Metal);
             crystal = new Resource(Resource.Type.Crystal);
             deuter = new Resource(Resource.Type.Deuter);
+            energy = new Energy();
             metal.setQuantity(metalValue);
             crystal.setQuantity(crystalValue);
             deuter.setQuantity(deuterValue);
+            energy.setValue(energyValue);
         }
 
         public long getMetalQuantity()

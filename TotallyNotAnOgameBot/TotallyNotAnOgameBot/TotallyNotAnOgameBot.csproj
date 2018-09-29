@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculations\ConstCalculator.cs" />
     <Compile Include="Data\Buildings\Building.cs" />
     <Compile Include="Data\Buildings\MoonBuildings.cs" />
     <Compile Include="Data\Buildings\ProductionBuildings.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Data\FleetData\Spaceships.cs" />
     <Compile Include="Data\Resarch\Resarch.cs" />
     <Compile Include="Data\Resarch\ResarchState.cs" />
+    <Compile Include="Data\Resource\Energy.cs" />
     <Compile Include="Data\Resource\Resource.cs" />
     <Compile Include="Data\Resource\Resources.cs" />
     <Compile Include="Data\Snapshots\EmpireStateSnapshot.cs" />

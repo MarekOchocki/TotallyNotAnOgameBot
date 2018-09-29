@@ -8,38 +8,21 @@ namespace TotallyNotAnOgameBot.Data.Resource
 {
     class Energy
     {
-        private long usage;
-        private long production;
+        private long value;
 
-        public Energy(long energyUsage = 0, long energyProduction = 0)
+        public Energy(long energyValue = 0)
         {
-            usage = energyUsage;
-            production = energyProduction;
+            value = energyValue;
         }
 
-        public long getUsage()
+        public long getValue()
         {
-            return usage;
+            return value;
         }
 
-        public long getProduction()
+        public void setValue(long energyValue)
         {
-            return production;
-        }
-
-        public void setUsage(long value)
-        {
-            usage = value;
-        }
-
-        public void setProduction(int value)
-        {
-            production = value;
-        }
-
-        public long getEnergy()
-        {
-            return (getProduction() - getUsage());
+            value = energyValue;
         }
     }
 }
