@@ -26,6 +26,7 @@ namespace TotallyNotAnOgameBot.Data.Buildings
             NaniteFactory = new Building(Building.Type.NaniteFactory, 0);
             Terraformer = new Building(Building.Type.Terraformer, 0);
             SpaceDock = new Building(Building.Type.SpaceDock, 0);
+            ResarchLab = new Building(Building.Type.ResarchLab, 0);
         }
     }
 }

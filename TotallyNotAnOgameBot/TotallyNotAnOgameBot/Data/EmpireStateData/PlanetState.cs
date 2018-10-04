@@ -21,7 +21,7 @@ namespace TotallyNotAnOgameBot.Data.EmpireStateData
         public StationBuildings station;
         public string name;
 
-        public PlanetState()
+        public PlanetState(string planetName = "Colony")
         {
             resources = new Resources();
             fleet = new Fleet();
@@ -29,6 +29,7 @@ namespace TotallyNotAnOgameBot.Data.EmpireStateData
             moon = new MoonState();
             production = new ProductionBuildings();
             station = new StationBuildings();
+            name = planetName;
         }
     }
 }

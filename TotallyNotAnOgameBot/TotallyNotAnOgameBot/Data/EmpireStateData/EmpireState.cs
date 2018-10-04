@@ -25,6 +25,8 @@ namespace TotallyNotAnOgameBot.Data.EmpireStateData
             }
             amountOfPlanets = planetQuantity;
             planets = new PlanetState[planetQuantity];
+            planets[1].name = "Main";
+            resarch = new ResarchState();
         }
     }
 }
