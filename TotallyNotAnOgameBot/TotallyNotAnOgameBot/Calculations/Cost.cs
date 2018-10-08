@@ -7,7 +7,7 @@ using TotallyNotAnOgameBot.Data.Resource;
 
 namespace TotallyNotAnOgameBot.Calculations
 {
-    class Cost
+    public class Cost
     {
         public Resources resources;
         public Energy energy;

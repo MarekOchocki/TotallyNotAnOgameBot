@@ -8,7 +8,7 @@ using TotallyNotAnOgameBot.Data.EmpireStateData;
 
 namespace TotallyNotAnOgameBot.Data.Snapshots
 {
-    class EmpireStateSnapshot
+    public class EmpireStateSnapshot
     {
 		public readonly EmpireState empireState;
 		public readonly DateTime date;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TotallyNotAnOgameBot.Data.Resource
 {
-    class Resources
+    public class Resources
     {
         private Resource metal;
         private Resource crystal;

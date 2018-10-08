@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TotallyNotAnOgameBot.Data.Research
 {
-    class ResearchState
+    public class ResearchState
     {
         public Research EnergyTechnology;
         public Research LaserTechnology;

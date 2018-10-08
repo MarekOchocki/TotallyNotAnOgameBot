@@ -8,7 +8,7 @@ using TotallyNotAnOgameBot.Data.Buildings;
 
 namespace TotallyNotAnOgameBot.Data.TechnologyRequirements
 {
-    class TechRequirements
+    public class TechRequirements
     {
         public ResearchState researchState;
         public StationBuildings stationBuildings;

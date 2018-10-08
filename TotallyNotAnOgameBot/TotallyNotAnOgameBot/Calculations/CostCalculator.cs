@@ -11,7 +11,7 @@ using TotallyNotAnOgameBot.Data.FleetData;
 
 namespace TotallyNotAnOgameBot.Calculations
 {
-    class CostCalculator
+    public class CostCalculator
     {
         static private readonly Dictionary<Building.Type, Cost> buildings;
         static private readonly Dictionary<Defense.Type, Cost> defenses;

@@ -11,7 +11,7 @@ using TotallyNotAnOgameBot.Data.FleetData;
 
 namespace TotallyNotAnOgameBot.Data.EmpireStateData
 {
-    class MoonState
+    public class MoonState
     {
         public MoonBuildings moonBuilding;
         public Resources moonResources;

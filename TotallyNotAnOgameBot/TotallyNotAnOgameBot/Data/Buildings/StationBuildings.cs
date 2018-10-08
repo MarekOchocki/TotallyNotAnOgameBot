@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TotallyNotAnOgameBot.Data.Buildings
 {
-    class StationBuildings
+    public class StationBuildings
     {
         public Building RoboticsFactory;
         public Building Shipyard;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TotallyNotAnOgameBot.Data.EmpireStateData
 {
-    class PlanetLocation
+    public class PlanetLocation
     {
         public readonly int planetNumber;
         public readonly int galaxyNumber;

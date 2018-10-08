@@ -7,7 +7,7 @@ using TotallyNotAnOgameBot.Exceptions;
 
 namespace TotallyNotAnOgameBot.Data.Defenses
 {
-    class Defense
+    public class Defense
     {
         public enum Type {RocletLauncher, LightLaser, HeavyLaser, GaussCannon, IonCannon, PlasmaTurret,
         SmallShieldDome, LargeShieldDome, AntiBalisticMissiles, InterplanetaryMissiles}

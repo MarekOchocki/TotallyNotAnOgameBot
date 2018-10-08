@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TotallyNotAnOgameBot.Data.Resource
 {
-    class Energy
+    public class Energy
     {
         private long value;
 

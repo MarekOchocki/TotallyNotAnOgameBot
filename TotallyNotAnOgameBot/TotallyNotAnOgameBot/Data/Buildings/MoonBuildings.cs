@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TotallyNotAnOgameBot.Data.Buildings
 {
-    class MoonBuildings
+    public class MoonBuildings
     {
         public Building LunarBase;
         public Building SensorPhalanx;

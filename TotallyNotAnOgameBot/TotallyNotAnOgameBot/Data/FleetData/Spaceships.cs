@@ -7,7 +7,7 @@ using TotallyNotAnOgameBot.Exceptions;
 
 namespace TotallyNotAnOgameBot.Data.FleetData
 {
-    class Spaceships
+    public class Spaceships
     {
         public enum Type {SmallCargo, LargeCargo, ColonyShip, Recykler, EspionageProbe, SolarSatelite,  LightFighter,
             HeavyFighter, Crusier, Battleship, Battlecrusier, Bomber, Destroyer, Deathstar};

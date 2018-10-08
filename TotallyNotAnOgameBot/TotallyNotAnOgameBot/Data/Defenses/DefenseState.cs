@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TotallyNotAnOgameBot.Data.Defenses
 {
-    class DefenseState
+    public class DefenseState
     {
         public Defense RocletLauncher;
         public Defense LightLaser;

@@ -7,7 +7,7 @@ using TotallyNotAnOgameBot.Exceptions;
 
 namespace TotallyNotAnOgameBot.Data.Resource
 {
-    class Resource
+    public class Resource
     {
         public enum Type { Metal, Crystal, Deuter };
 

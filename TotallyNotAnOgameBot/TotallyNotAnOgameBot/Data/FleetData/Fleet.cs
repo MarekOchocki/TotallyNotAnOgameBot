@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TotallyNotAnOgameBot.Data.FleetData
 {
-    class Fleet
+    public class Fleet
     {
         public Spaceships smallCargo;
         public Spaceships largeCargo;
