@@ -97,30 +97,6 @@ namespace TotallyNotAnOgameBot.Calculations
             };
         }
 
-        static private void Multiplication(ref Cost cost, double multipler, int level)
-        {
-            double metalValue = cost.resources.getMetalQuantity();
-            metalValue = metalValue * Math.Pow(multipler, level);
-            double crystalValue = cost.resources.getCrystalQuantity();
-            crystalValue = Math.Pow(multipler, level) * crystalValue;
-            double deuterValue = cost.resources.getDeuterQuantity();
-            deuterValue = Math.Pow(multipler, level) * deuterValue;
-            double energyValue = cost.energy.getValue();
-            energyValue = Math.Pow(multipler, level) * energyValue;
-
-            cost.resources.setResources((long)metalValue, (long)crystalValue, (long)deuterValue);
-            cost.energy.setValue((long)energyValue);
-        }
-
-        static private void Multiplication(ref Cost cost, int quantity)
-        {
-            double metalValue = cost.resources.getMetalQuantity() * quantity;
-            double crystalValue = cost.resources.getCrystalQuantity() * quantity;
-            double deuterValue = cost.resources.getDeuterQuantity() * quantity;
-
-            cost.resources.setResources((long)metalValue, (long)crystalValue, (long)deuterValue);
-        }
-
         static public Cost getBuildingCost(Building.Type type, int level)
         {
             buildings.TryGetValue(type, out Cost cost);
@@ -128,18 +104,19 @@ namespace TotallyNotAnOgameBot.Calculations
                 (type == Building.Type.DeuteriumSynthesizer) || 
                 (type == Building.Type.SolarPlant))
             {
-                    Multiplication(ref cost, 1.5, level);
+                cost.multiplication(Math.Pow(1.5, level));
 
             }else if(type == Building.Type.CrystalMine)
             {
-                    Multiplication(ref cost, 1.6, level);
-
-            }else if(type == Building.Type.FusionReactor)
+                cost.multiplication(Math.Pow(1.6, level));
+            }
+            else if(type == Building.Type.FusionReactor)
             {
-                    Multiplication(ref cost, 1.8, level);
-            }else
+                cost.multiplication(Math.Pow(1.8, level));
+            }
+            else
             {
-                    Multiplication(ref cost, 2, level);
+                cost.multiplication(Math.Pow(2, level));
             }
             return cost;
         }
@@ -147,7 +124,7 @@ namespace TotallyNotAnOgameBot.Calculations
         static public Cost getDefenseCost(Defense.Type type, int quantity)
         {
             defenses.TryGetValue(type, out Cost cost);
-                Multiplication(ref cost, quantity);
+            cost.multiplication(quantity);
             return cost;
         }
 
@@ -156,10 +133,11 @@ namespace TotallyNotAnOgameBot.Calculations
             resarch.TryGetValue(type, out Cost cost);
             if (type == Resarch.Type.GravitonTechnology)
             {
-                Multiplication(ref cost, 3, level);
-            }else
+                cost.multiplication(Math.Pow(3, level));
+            }
+            else
             {
-                Multiplication(ref cost, 2, level);
+                cost.multiplication(Math.Pow(2, level));
             }
             return cost;
         }
@@ -167,7 +145,7 @@ namespace TotallyNotAnOgameBot.Calculations
         static public Cost getSpaceshipsCost(Spaceships.Type type, int quantity)
         {
             spaceship.TryGetValue(type, out Cost cost);
-                Multiplication(ref cost, quantity);
+            cost.multiplication(quantity);
             return cost;
         }
     }
