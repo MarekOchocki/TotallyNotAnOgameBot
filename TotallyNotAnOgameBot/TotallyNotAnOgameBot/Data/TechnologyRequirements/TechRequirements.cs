@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TotallyNotAnOgameBot.Data.Resarch;
+using TotallyNotAnOgameBot.Data.Research;
 using TotallyNotAnOgameBot.Data.Buildings;
 
 namespace TotallyNotAnOgameBot.Data.TechnologyRequirements
 {
     class TechRequirements
     {
-        public ResarchState resarchState;
+        public ResearchState researchState;
         public StationBuildings stationBuildings;
         public ProductionBuildings productionBuildings;
         public MoonBuildings moonBuildings;
 
         public TechRequirements()
         {
-            resarchState = new ResarchState();
+            researchState = new ResearchState();
             stationBuildings = new StationBuildings();
             productionBuildings = new ProductionBuildings();
             moonBuildings = new MoonBuildings();

@@ -20,12 +20,12 @@ namespace TotallyNotAnOgameBot.Calculations
             energy = new Energy(energyValue);
         }
 
-        public void multiplication(double number)
+        public void multiply(double multiplier)
         {
-            double metalValue = resources.getMetalQuantity() * number;
-            double crystalValue = resources.getCrystalQuantity() * number;
-            double deuterValue = resources.getDeuterQuantity() * number;
-            double energyValue = energy.getValue() * number;
+            double metalValue = resources.getMetalQuantity() * multiplier;
+            double crystalValue = resources.getCrystalQuantity() * multiplier;
+            double deuterValue = resources.getDeuterQuantity() * multiplier;
+            double energyValue = energy.getValue() * multiplier;
         }
     }
 }

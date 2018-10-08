@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TotallyNotAnOgameBot.Data.Resarch;
+using TotallyNotAnOgameBot.Data.Research;
 using TotallyNotAnOgameBot.Exceptions;
 
 namespace TotallyNotAnOgameBot.Data.EmpireStateData
 {
     class EmpireState
     {
-        public ResarchState resarch;
+        public ResearchState research;
         public int amountOfPlanets;
         public PlanetState[] planets;
 
@@ -26,7 +26,7 @@ namespace TotallyNotAnOgameBot.Data.EmpireStateData
             amountOfPlanets = planetQuantity;
             planets = new PlanetState[planetQuantity];
             planets[1].name = "Main";
-            resarch = new ResarchState();
+            research = new ResearchState();
         }
     }
 }

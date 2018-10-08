@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using TotallyNotAnOgameBot.Exceptions;
 
-namespace TotallyNotAnOgameBot.Data.Resarch
+namespace TotallyNotAnOgameBot.Data.Research
 {
-    class Resarch
+    class Research
     {
         public enum Type {EnergyTechnology, LaserTechnology, IonTechnology, HyperspaceTechnology, PlasmaTechnology,
         EspionageTechnology, ComputerTechnology, Astrophysics, IntergalacticResearchNetwork, GravitonTechnology,
@@ -16,14 +16,14 @@ namespace TotallyNotAnOgameBot.Data.Resarch
         private int level;
         private readonly Type type;
 
-        public Resarch(Type resarchType, int resarchLevel = 0)
+        public Research(Type researchType, int researchLevel = 0)
         {
-            type = resarchType;
-            if (resarchLevel < 0)
+            type = researchType;
+            if (researchLevel < 0)
             {
                 throw new LessThanZeroException();
             }
-            level = resarchLevel;
+            level = researchLevel;
         }
 
         public Type getType()
