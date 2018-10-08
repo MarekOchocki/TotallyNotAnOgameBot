@@ -58,7 +58,7 @@ namespace TotallyNotAnOgameBot.Calculations
                 {Defense.Type.InterplanetaryMissiles, new Cost(12500, 2500, 10000) }
             };
 
-            resarch = new Dictionary<Research.Type, Cost>
+            research = new Dictionary<Research.Type, Cost>
             {
                 {Research.Type.EnergyTechnology, new Cost( 0, 800, 400) },
                 {Research.Type.LaserTechnology, new Cost( 200, 100, 0) },

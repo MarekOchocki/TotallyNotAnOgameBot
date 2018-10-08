@@ -26,6 +26,9 @@ namespace TotallyNotAnOgameBot.Calculations
             double crystalValue = resources.getCrystalQuantity() * multiplier;
             double deuterValue = resources.getDeuterQuantity() * multiplier;
             double energyValue = energy.getValue() * multiplier;
+
+            resources.setResources((long)metalValue, (long)crystalValue, (long)deuterValue);
+            energy.setValue((long)energyValue);
         }
     }
 }
