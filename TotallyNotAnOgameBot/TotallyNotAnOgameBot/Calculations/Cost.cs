@@ -30,5 +30,37 @@ namespace TotallyNotAnOgameBot.Calculations
             resources.setResources((long)metalValue, (long)crystalValue, (long)deuterValue);
             energy.setValue((long)energyValue);
         }
+
+        public void round(int digits)
+        {
+            double metalValue = resources.getMetalQuantity();
+            double crystalValue = resources.getCrystalQuantity();
+            double deuterValue = resources.getDeuterQuantity();
+            double energyValue = energy.getValue();
+
+            int modifier = 1;
+            if (digits < 0)
+            {
+                digits = Math.Abs(digits);
+                modifier = (int)Math.Pow(10,  digits);
+
+                metalValue /= modifier;
+                crystalValue /= modifier;
+                deuterValue /= modifier;
+                energyValue /= modifier;
+                digits = 0;
+            }
+            metalValue = Math.Round(metalValue, digits);
+            crystalValue = Math.Round(crystalValue, digits);
+            deuterValue = Math.Round(deuterValue, digits);
+            energyValue = Math.Round(energyValue, digits);
+            metalValue *= modifier;
+            crystalValue *= modifier;
+            deuterValue *= modifier;
+            energyValue *= modifier;
+
+            resources.setResources((long)metalValue, (long)crystalValue, (long)deuterValue);
+            energy.setValue((long)energyValue);
+        }
     }
 }

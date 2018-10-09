@@ -9,8 +9,8 @@ namespace TotallyNotAnOgameBot.Data.Buildings
 {
     public class Building
     {
-        public enum Type {MetalMine, CrystalMine, DeuteriumSynthesizer, SolarPlant, FusionReactor, SolarSatelite,
-        MetalStorge, CrystalStorge, DeuteriumTank, RoboticsFactory, Shipyard, ResarchLab, AllianceDepot, MissileSilo,
+        public enum Type {MetalMine, CrystalMine, DeuteriumSynthesizer, SolarPlant, FusionReactor,
+        MetalStorage, CrystalStorage, DeuteriumTank, RoboticsFactory, Shipyard, ResarchLab, AllianceDepot, MissileSilo,
         NaniteFactory, Terraformer, SpaceDock, LunarBase, SensorPhalanx, JumpGate}
 
         private int level;

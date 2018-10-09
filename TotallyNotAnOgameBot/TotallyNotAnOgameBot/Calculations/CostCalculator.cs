@@ -27,9 +27,8 @@ namespace TotallyNotAnOgameBot.Calculations
                 {Building.Type.DeuteriumSynthesizer, new Cost(225, 75, 0) },
                 {Building.Type.SolarPlant, new Cost(75, 30, 0) },
                 {Building.Type.FusionReactor, new Cost(900, 360, 180) },
-                {Building.Type.SolarSatelite, new Cost(0, 2000, 500) },
-                {Building.Type.MetalStorge, new Cost(1000, 0, 0) },
-                {Building.Type.CrystalStorge, new Cost(1000, 500, 0) },
+                {Building.Type.MetalStorage, new Cost(1000, 0, 0) },
+                {Building.Type.CrystalStorage, new Cost(1000, 500, 0) },
                 {Building.Type.DeuteriumTank, new Cost(1000, 1000, 0) },
                 {Building.Type.RoboticsFactory, new Cost(400, 120, 200) },
                 {Building.Type.Shipyard, new Cost(400, 200, 100) },
@@ -69,7 +68,7 @@ namespace TotallyNotAnOgameBot.Calculations
                 {Research.Type.ComputerTechnology, new Cost( 0, 400, 600) },
                 {Research.Type.Astrophysics, new Cost( 4000, 8000, 4000) },
                 {Research.Type.IntergalacticResearchNetwork, new Cost( 240000, 400000, 160000) },
-                {Research.Type.GravitonTechnology, new Cost( 0, 0, 0, 100000) },
+                {Research.Type.GravitonTechnology, new Cost( 0, 0, 0, 300000) },
                 {Research.Type.WeaponsTechnology, new Cost( 800, 200, 0) },
                 {Research.Type.ShieldingTechnology, new Cost( 200, 600, 0) },
                 {Research.Type.ArmourTechnology, new Cost( 1000, 0, 0) },
@@ -83,7 +82,7 @@ namespace TotallyNotAnOgameBot.Calculations
                 {Spaceships.Type.LightFighter, new Cost(3000, 1000, 0) },
                 {Spaceships.Type.HeavyFighter, new Cost(6000, 4000, 0) },
                 {Spaceships.Type.Crusier, new Cost(20000, 7000, 2000) },
-                {Spaceships.Type.Battleship, new Cost(20000, 7000, 2000) },
+                {Spaceships.Type.Battleship, new Cost(45000, 15000, 0) },
                 {Spaceships.Type.Battlecrusier, new Cost(30000, 40000, 15000) },
                 {Spaceships.Type.Bomber, new Cost(50000, 25000, 15000) },
                 {Spaceships.Type.Destroyer, new Cost(60000, 50000, 15000) },
@@ -91,38 +90,45 @@ namespace TotallyNotAnOgameBot.Calculations
                 {Spaceships.Type.SmallCargo, new Cost(2000, 2000, 0) },
                 {Spaceships.Type.LargeCargo, new Cost(6000, 6000, 0) },
                 {Spaceships.Type.ColonyShip, new Cost(10000, 20000, 10000) },
-                {Spaceships.Type.Recykler, new Cost(10000, 6000, 2000) },
+                {Spaceships.Type.Recycler, new Cost(10000, 6000, 2000) },
                 {Spaceships.Type.EspionageProbe, new Cost(0, 1000, 0) },
-                {Spaceships.Type.SolarSatelite, new Cost(0, 5000, 500) },
+                {Spaceships.Type.SolarSatelite, new Cost(0, 2000, 500) },
             };
         }
 
         static public Cost getBuildingCost(Building.Type type, int level)
         {
+            if (level <= 0)
+                throw new Exception();
             buildings.TryGetValue(type, out Cost cost);
             if((type == Building.Type.MetalMine) || 
                 (type == Building.Type.DeuteriumSynthesizer) || 
                 (type == Building.Type.SolarPlant))
             {
-                cost.multiply(Math.Pow(1.5, level));
+                cost.multiply(Math.Pow(1.5, level-1));
 
             }else if(type == Building.Type.CrystalMine)
             {
-                cost.multiply(Math.Pow(1.6, level));
+                cost.multiply(Math.Pow(1.6, level-1));
             }
             else if(type == Building.Type.FusionReactor)
             {
-                cost.multiply(Math.Pow(1.8, level));
+                cost.multiply(Math.Pow(1.8, level-1));
+            }else if(type == Building.Type.SpaceDock)
+            {
+                cost.multiply(Math.Pow(5, level - 1));
             }
             else
             {
-                cost.multiply(Math.Pow(2, level));
+                cost.multiply(Math.Pow(2, level-1));
             }
             return cost;
         }
 
         static public Cost getDefenseCost(Defense.Type type, int quantity)
         {
+            if (quantity <= 0)
+                throw new Exception();
             defenses.TryGetValue(type, out Cost cost);
             cost.multiply(quantity);
             return cost;
@@ -130,20 +136,28 @@ namespace TotallyNotAnOgameBot.Calculations
 
         static public Cost getResarchCost(Research.Type type, int level)
         {
+            if (level <= 0)
+                throw new Exception();
             research.TryGetValue(type, out Cost cost);
             if (type == Research.Type.GravitonTechnology)
             {
-                cost.multiply(Math.Pow(3, level));
+                cost.multiply(Math.Pow(3, level-1));
+            }else if(type == Research.Type.Astrophysics)
+            {
+                cost.multiply(Math.Pow(1.75, level-1));
+                cost.round(-2);
             }
             else
             {
-                cost.multiply(Math.Pow(2, level));
+                cost.multiply(Math.Pow(2, level-1));
             }
             return cost;
         }
 
         static public Cost getSpaceshipsCost(Spaceships.Type type, int quantity)
         {
+            if (quantity <= 0)
+                throw new Exception();
             spaceship.TryGetValue(type, out Cost cost);
             cost.multiply(quantity);
             return cost;

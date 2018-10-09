@@ -11,8 +11,8 @@ namespace TotallyNotAnOgameBot.Data.Buildings
         public Building LunarBase;
         public Building SensorPhalanx;
         public Building JumpGate;
-        public Building MetalStorge;
-        public Building CrystalStorge;
+        public Building MetalStorage;
+        public Building CrystalStorage;
         public Building DeuteriumTank;
         public Building RoboticsFactory;
         public Building Shipyard;
@@ -26,8 +26,8 @@ namespace TotallyNotAnOgameBot.Data.Buildings
             RoboticsFactory = new Building(Building.Type.RoboticsFactory, 0);
             Shipyard = new Building(Building.Type.Shipyard, 0);
             AllianceDepot = new Building(Building.Type.AllianceDepot, 0);
-            MetalStorge = new Building(Building.Type.MetalStorge, 0);
-            CrystalStorge = new Building(Building.Type.CrystalStorge, 0);
+            MetalStorage = new Building(Building.Type.MetalStorage, 0);
+            CrystalStorage = new Building(Building.Type.CrystalStorage, 0);
             DeuteriumTank = new Building(Building.Type.DeuteriumTank, 0);
         }
     }

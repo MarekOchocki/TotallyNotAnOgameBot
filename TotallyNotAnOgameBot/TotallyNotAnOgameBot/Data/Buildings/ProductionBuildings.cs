@@ -13,9 +13,8 @@ namespace TotallyNotAnOgameBot.Data.Buildings
         public Building DeuteriumSynthesizer;
         public Building SolarPlant;
         public Building FusionReactor;
-        public Building SolarSatelite;
-        public Building MetalStorge;
-        public Building CrystalStorge;
+        public Building MetalStorage;
+        public Building CrystalStorage;
         public Building DeuteriumTank;
 
         public ProductionBuildings()
@@ -25,9 +24,8 @@ namespace TotallyNotAnOgameBot.Data.Buildings
             DeuteriumSynthesizer = new Building(Building.Type.DeuteriumSynthesizer, 0);
             SolarPlant = new Building(Building.Type.SolarPlant, 0);
             FusionReactor = new Building(Building.Type.FusionReactor, 0);
-            SolarSatelite = new Building(Building.Type.SolarSatelite, 0);
-            MetalStorge = new Building(Building.Type.MetalStorge, 0);
-            CrystalStorge = new Building(Building.Type.CrystalStorge, 0);
+            MetalStorage = new Building(Building.Type.MetalStorage, 0);
+            CrystalStorage = new Building(Building.Type.CrystalStorage, 0);
             DeuteriumTank = new Building(Building.Type.DeuteriumTank, 0);
         }
     }

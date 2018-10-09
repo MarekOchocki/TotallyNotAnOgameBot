@@ -9,7 +9,7 @@ namespace TotallyNotAnOgameBot.Data.FleetData
 {
     public class Spaceships
     {
-        public enum Type {SmallCargo, LargeCargo, ColonyShip, Recykler, EspionageProbe, SolarSatelite,  LightFighter,
+        public enum Type {SmallCargo, LargeCargo, ColonyShip, Recycler, EspionageProbe, SolarSatelite,  LightFighter,
             HeavyFighter, Crusier, Battleship, Battlecrusier, Bomber, Destroyer, Deathstar};
 
         private readonly Type type;

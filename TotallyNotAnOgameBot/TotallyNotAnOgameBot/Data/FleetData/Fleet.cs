@@ -11,7 +11,7 @@ namespace TotallyNotAnOgameBot.Data.FleetData
         public Spaceships smallCargo;
         public Spaceships largeCargo;
         public Spaceships colonyShip;
-        public Spaceships recykler;
+        public Spaceships recycler;
         public Spaceships espionageProbe;
         public Spaceships solarSatelite;
         public Spaceships lightFighter;
@@ -28,7 +28,7 @@ namespace TotallyNotAnOgameBot.Data.FleetData
             smallCargo = new Spaceships(Spaceships.Type.SmallCargo, 0);
             largeCargo = new Spaceships(Spaceships.Type.LargeCargo, 0 );
             colonyShip = new Spaceships(Spaceships.Type.ColonyShip, 0 );
-            recykler = new Spaceships(Spaceships.Type.Recykler, 0);
+            recycler = new Spaceships(Spaceships.Type.Recycler, 0);
             espionageProbe = new Spaceships(Spaceships.Type.EspionageProbe, 0);
             solarSatelite = new Spaceships(Spaceships.Type.SolarSatelite, 0);
             lightFighter = new Spaceships(Spaceships.Type.LightFighter, 0);
@@ -46,7 +46,7 @@ namespace TotallyNotAnOgameBot.Data.FleetData
             smallCargo.addQuantity(otherFleet.smallCargo.getQuantity()); 
             largeCargo.addQuantity(otherFleet.largeCargo.getQuantity()); 
             colonyShip.addQuantity(otherFleet.colonyShip.getQuantity()); 
-            recykler.addQuantity(otherFleet.recykler.getQuantity()); 
+            recycler.addQuantity(otherFleet.recycler.getQuantity()); 
             espionageProbe.addQuantity(otherFleet.espionageProbe.getQuantity()); 
             solarSatelite.addQuantity(otherFleet.solarSatelite.getQuantity()); 
             lightFighter.addQuantity(otherFleet.lightFighter.getQuantity()); 
@@ -64,7 +64,7 @@ namespace TotallyNotAnOgameBot.Data.FleetData
             smallCargo.substractQuantity(otherFleet.smallCargo.getQuantity());
             largeCargo.substractQuantity(otherFleet.largeCargo.getQuantity());
             colonyShip.substractQuantity(otherFleet.colonyShip.getQuantity());
-            recykler.substractQuantity(otherFleet.recykler.getQuantity());
+            recycler.substractQuantity(otherFleet.recycler.getQuantity());
             espionageProbe.substractQuantity(otherFleet.espionageProbe.getQuantity());
             solarSatelite.substractQuantity(otherFleet.solarSatelite.getQuantity());
             lightFighter.substractQuantity(otherFleet.lightFighter.getQuantity());
