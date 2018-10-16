@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TotallyNotAnOgameBot.Data.Buildings;
+﻿using TotallyNotAnOgameBot.Data.Buildings;
 using TotallyNotAnOgameBot.Data.Defenses;
 using TotallyNotAnOgameBot.Data.Resource;
 using TotallyNotAnOgameBot.Data.FleetData;
-
 
 namespace TotallyNotAnOgameBot.Data.EmpireStateData
 {

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TotallyNotAnOgameBot.Data.Research;
+using TotallyNotAnOgameBot.Data.ResearchData;
 using TotallyNotAnOgameBot.Data.Buildings;
 
 namespace TotallyNotAnOgameBot.Data.TechnologyRequirements
@@ -23,5 +19,30 @@ namespace TotallyNotAnOgameBot.Data.TechnologyRequirements
             moonBuildings = new MoonBuildings();
         }
 
+        public TechRequirements addRequirement(Building.Type building, int level )
+        {
+            if ((int)building <= 7)
+            {
+                productionBuildings.setBuildingLevel(building, level);
+            }
+            else if ((int)building <= 15)
+            {
+                stationBuildings.setBuildingLevel(building, level);
+            }
+            else if ((int)building <= 24)
+            {
+                moonBuildings.setBuildingLevel(building, level);
+            }
+            else
+                throw new Exception();
+
+            return this;
+        }
+
+        public TechRequirements addRequirement(Research.Type research, int level)
+        {
+            researchState.setResearchLevel(research, level);
+            return this;
+        }
     }
 }

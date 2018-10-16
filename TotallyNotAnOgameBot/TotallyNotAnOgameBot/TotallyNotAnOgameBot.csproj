@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Calculations\Cost.cs" />
     <Compile Include="Calculations\CostCalculator.cs" />
+    <Compile Include="Calculations\TechRequirementsCalculator.cs" />
     <Compile Include="Data\Buildings\Building.cs" />
     <Compile Include="Data\Buildings\MoonBuildings.cs" />
     <Compile Include="Data\Buildings\ProductionBuildings.cs" />
@@ -57,8 +58,8 @@
     <Compile Include="Data\EmpireStateData\PlanetState.cs" />
     <Compile Include="Data\FleetData\Fleet.cs" />
     <Compile Include="Data\FleetData\Spaceships.cs" />
-    <Compile Include="Data\Research\Research.cs" />
-    <Compile Include="Data\Research\ResearchState.cs" />
+    <Compile Include="Data\ResearchData\Research.cs" />
+    <Compile Include="Data\ResearchData\ResearchState.cs" />
     <Compile Include="Data\Resource\Energy.cs" />
     <Compile Include="Data\Resource\Resource.cs" />
     <Compile Include="Data\Resource\Resources.cs" />

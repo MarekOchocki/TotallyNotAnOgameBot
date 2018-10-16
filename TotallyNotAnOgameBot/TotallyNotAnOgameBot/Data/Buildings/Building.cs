@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TotallyNotAnOgameBot.Exceptions;
+﻿using TotallyNotAnOgameBot.Exceptions;
 
 namespace TotallyNotAnOgameBot.Data.Buildings
 {
@@ -11,7 +6,8 @@ namespace TotallyNotAnOgameBot.Data.Buildings
     {
         public enum Type {MetalMine, CrystalMine, DeuteriumSynthesizer, SolarPlant, FusionReactor,
         MetalStorage, CrystalStorage, DeuteriumTank, RoboticsFactory, Shipyard, ResarchLab, AllianceDepot, MissileSilo,
-        NaniteFactory, Terraformer, SpaceDock, LunarBase, SensorPhalanx, JumpGate}
+        NaniteFactory, Terraformer, SpaceDock, LunarBase, SensorPhalanx, JumpGate, MoonRoboticsFactory, MoonShipyard,
+        MoonMetalStorage, MoonCrystalStorage, MoonDeuteriumTank, MoonAllianceDepot}
 
         private int level;
         private readonly Type type;

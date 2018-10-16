@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TotallyNotAnOgameBot.Data.Buildings
 {
@@ -27,6 +23,44 @@ namespace TotallyNotAnOgameBot.Data.Buildings
             MetalStorage = new Building(Building.Type.MetalStorage, 0);
             CrystalStorage = new Building(Building.Type.CrystalStorage, 0);
             DeuteriumTank = new Building(Building.Type.DeuteriumTank, 0);
+        }
+
+        public void setBuildingLevel(Building.Type type, int level)
+        {
+            if (type == Building.Type.MetalMine)
+            {
+                MetalMine.setLevel(level);
+            }
+            else if (type == Building.Type.CrystalMine)
+            {
+                CrystalMine.setLevel(level);
+            }
+            else if (type == Building.Type.DeuteriumSynthesizer)
+            {
+                DeuteriumSynthesizer.setLevel(level);
+            }
+            else if (type == Building.Type.SolarPlant)
+            {
+                SolarPlant.setLevel(level);
+            }
+            else if (type == Building.Type.FusionReactor)
+            {
+                FusionReactor.setLevel(level);
+            }
+            else if (type == Building.Type.MetalStorage)
+            {
+                MetalStorage.setLevel(level);
+            }
+            else if (type == Building.Type.CrystalStorage)
+            {
+                CrystalStorage.setLevel(level);
+            }
+            else if (type == Building.Type.DeuteriumTank)
+            {
+                DeuteriumTank.setLevel(level);
+            }
+            else
+                throw new Exception();
         }
     }
 }
